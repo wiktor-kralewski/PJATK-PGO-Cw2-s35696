@@ -7,10 +7,13 @@ public class Main {
         Ksiazka ksiazka4 = new Ksiazka("Wiedźmin4", "XYZ", 150, true);
 
         ksiazka1.wypiszInfo();
+        System.out.println();
         ksiazka1.wypozycz();
         ksiazka1.wypiszInfo();
         ksiazka1.zwroc();
         ksiazka1.wypiszInfo();
+
+        System.out.println();
 
         Czytelnik czytelnik1 = new Czytelnik("Jan", "Kowalski", "258745", 0);
         czytelnik1.wypiszDane();
@@ -25,6 +28,26 @@ public class Main {
         czytelnik1.wypiszDane();
         czytelnik1.zwiekszLiczbeWypozyczen();
         czytelnik1.wypiszDane();
+
+        Biblioteka biblioteka = new Biblioteka(4);
+        biblioteka.dodajKsiazke(ksiazka1);
+        biblioteka.dodajKsiazke(ksiazka2);
+        biblioteka.dodajKsiazke(ksiazka3);
+        biblioteka.dodajKsiazke(ksiazka4);
+
+        System.out.println();
+
+        System.out.println("Dostepne ksiazki:");
+        biblioteka.wypiszDostepneKsiazki();
+
+        System.out.println();
+
+        biblioteka.znajdzKsiazkePoTytule("Wiedźmin2").wypiszInfo();
+
+        System.out.println();
+
+        System.out.println("Ilość dostępnych książek:" + " " + biblioteka.zwrocLiczbeDostepnychKsiazek());
+
 
     }
 }
